@@ -42,19 +42,13 @@ router.post('/signup', (req, res, next) => {
   }
 
 
-  User.findOne({email: email, username: username }).then((foundUser) => {
+  User.findOne({username: username }).then((foundUser) => {
     if (foundUser.username) {
       return res.json({
         errorMessage: "You've been had! your username is already taken!",
       });
     }
 
-    if (foundUser.email) {
-        return res.json({
-          errorMessage: "You've been had! your email is already taken!",
-        });
-      }
-    
     // encrypt the password
     const saltRounds = 10;
     return bcrypt
@@ -78,17 +72,17 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
-  const { firstName, lastName, email, username, password } = req.body;
+  const { email, password } = req.body;
 
-  if (!username || !password) {
+  if (!email || !password) {
     return res.status(400).json({
       errorMessage: `Hey! Did you forget something? cough cough ${
-        username ? 'password' : password ? 'username and password' : 'username'
+        email ? 'password' : password ? 'email and password' : 'email'
       }`,
     });
   }
 
-  User.findOne({ username })
+  User.findOne({ email })
     .then((user) => {
       if (!user) {
         return res.json({
@@ -121,11 +115,11 @@ router.post('/logout', (req, res, next) => {
   });
 });
 
-router.get('/loggedin', (req, res, next) => {
-  if (req.session.user) {
-    return res.json({ user: req.session.user });
-  }
-  res.status(403).json({ errorMessage: "You're not authenticated." });
-});
+// router.get('/loggedin', (req, res, next) => {
+//   if (req.session.user) {
+//     return res.json({ user: req.session.user });
+//   }
+//   res.status(403).json({ errorMessage: "You're not authenticated." });
+// });
 
 module.exports = router;
