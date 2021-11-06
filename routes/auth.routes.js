@@ -1,37 +1,67 @@
 // install npm i bcryptjs express-session connect-mongo
+// merge branches - :qa is the code to let it all go through
+
 const router = require('express').Router();
-// const User = require('../models/User.model');
+const User = require('../models/User.model');
 const bcrypt = require('bcryptjs');
 
 router.post('/signup', (req, res, next) => {
   const { firstName, lastName, email, username, password } = req.body;
-
-  // verifications of username sent from the signup page
-  if (!username) {
+  
+  // verifications of firstName existence to be sent from the signup page
+  if (!firstName) {
     return res.status(400).json({
-      errorMessage: 'Hey! We need a username from you....buddy!',
+      errorMessage: 'Aye but we need your first name!',
     });
   }
 
-  // verifications of email sent from the signup page
-
-  if (password.length < 8) {
-    return res.json({ errorMessage: 'That password is not safe...dude!' });
+  // verifications of lastName existence to be sent from the signup page
+  if (!lastName) {
+    return res.status(400).json({
+      errorMessage: 'Aye but we need your last name!',
+    });
   }
 
-  User.findOne({ username: username }).then((foundUser) => {
-    if (foundUser) {
+  // verifications of email existence to be sent from the signup page 
+  if (!email) {
+    return res.status(400).json({
+      errorMessage: 'Aye but we need an email for ya!',
+    });
+  }
+
+  // verifications of username existence to be sent from the signup page
+  if (!username) {
+    return res.status(400).json({
+      errorMessage: "Giv' us a username won't cha!",
+    });
+  }
+
+  // backend validators for the password selection process
+  if (password.length < 8) {
+    return res.json({ errorMessage: "Bang Bang! that password is an easy bullseye! Do ya want the bandits on ya?" });
+  }
+
+
+  User.findOne({email: email, username: username }).then((foundUser) => {
+    if (foundUser.username) {
       return res.json({
-        errorMessage: 'The username is already taken, Kim.',
+        errorMessage: "You've been had! your username is already taken!",
       });
     }
+
+    if (foundUser.email) {
+        return res.json({
+          errorMessage: "You've been had! your email is already taken!",
+        });
+      }
+    
     // encrypt the password
     const saltRounds = 10;
     return bcrypt
       .genSalt(saltRounds)
       .then((salt) => bcrypt.hash(password, salt))
       .then((hashedPassword) => {
-        return User.create({ username, password: hashedPassword });
+        return User.create({ firstName, lastName, email, username, password: hashedPassword });
       })
       .then((user) => {
         req.session.user = user;
