@@ -43,7 +43,7 @@ router.post('/signup', (req, res, next) => {
 
 
   User.findOne({username: username }).then((foundUser) => {
-    if (foundUser.username) {
+    if (foundUser) {
       return res.json({
         errorMessage: "You've been had! your username is already taken!",
       });
@@ -115,11 +115,11 @@ router.post('/logout', (req, res, next) => {
   });
 });
 
-// router.get('/loggedin', (req, res, next) => {
-//   if (req.session.user) {
-//     return res.json({ user: req.session.user });
-//   }
-//   res.status(403).json({ errorMessage: "You're not authenticated." });
-// });
+router.get('/loggedin', (req, res, next) => {
+  if (req.session.user) {
+    return res.json({ user: req.session.user });
+  }
+  res.status(403).json({ errorMessage: "You're not authenticated." });
+});
 
 module.exports = router;
