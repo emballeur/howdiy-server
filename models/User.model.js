@@ -15,6 +15,14 @@ const userSchema = new Schema(
     },
     password: String,
     favourites: [String],
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    isOwner: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
