@@ -9,9 +9,9 @@ router.get('/categories', (req, res, next) => {
 });
 
 // "/recipes/create"
-router.post("/create", (req, res, next) => {
+// router.post("/create", (req, res, next) => {
     
-})
+// })
   
 // if (req.session.user) 
 // return res.json({ user: req.session.user });
