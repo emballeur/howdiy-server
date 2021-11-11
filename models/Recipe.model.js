@@ -6,16 +6,18 @@ const recipeSchema = new Schema(
     funName: String,
     category: {
       type: String,
-      enum: ['Facecare', 'Bodycare', 'Housecare', 'Play', 'Food', 'Drink'],
+      enum: ["facecare", "bodycare", "housecare", "play", "food", "drink"],
     },
     isGiftable: {
       type: Boolean,
     },
     descriptiveName: String, // max 6 words in form?
-    ingredients: [{
+    ingredients: [
+      {
         name: String,
         quantity: String,
-    }],
+      },
+    ],
     preparation: [String],
     productImg: String,
     gallery: [String],
