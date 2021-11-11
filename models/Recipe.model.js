@@ -22,6 +22,7 @@ const recipeSchema = new Schema(
     timeOfPreparation: Number, // specify mins in form
     costRating: Number, // TIP on how to calculate in form
     difficultyRating: Number, // TIP on how to calculate in form
+    createdBy: String,
     isOwner: {
       type: Boolean,
       default: false,
