@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Recipe = require("../models/Recipe.model");
+const User = require("../models/User.model"); // use this PENDING -- find the User (createdBy) of the Recipe 
 
 // "/recipes/categories"
 router.get("/categorylist/:category", (req, res, next) => {

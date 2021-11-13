@@ -24,7 +24,10 @@ const recipeSchema = new Schema(
     timeOfPreparation: Number, // specify mins in form
     costRating: Number, // TIP on how to calculate in form
     difficultyRating: Number, // TIP on how to calculate in form
-    createdBy: String,
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: "User" //whatever you defined the model as "blabla" in the model in the User.model
+    },
     isOwner: {
       type: Boolean,
       default: false,
