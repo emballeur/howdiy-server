@@ -35,6 +35,7 @@ router.post("/create", (req, res, next) => {
     timeOfPreparation,
     costRating,
     difficultyRating,
+    createdBy: req.session.user._id,
   })
     .then((data) => res.json(data))
     .catch((err) => next(err));
@@ -45,7 +46,7 @@ router.get("/:id", (req, res, next) => {
   Recipe.findById(req.params.id)
     .then((data) => res.json(data))
     .catch((err) => next(err));
-});
+}); // for the view of Howdiy.jsx
 
 //edit
 router.patch("/:id", (req, res, next) => {

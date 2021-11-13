@@ -28,10 +28,6 @@ const recipeSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: "User" //whatever you defined the model as "blabla" in the model in the User.model
     },
-    isOwner: {
-      type: Boolean,
-      default: false,
-    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

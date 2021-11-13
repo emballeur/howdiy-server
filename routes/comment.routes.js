@@ -6,11 +6,21 @@ const User = require("../models/User.model");
 /* 
 "/comments/all"
 router.get("/all", (req, res, next) => {
-    const { category } = req.params;
-    Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1 })
+    const { recipe_id } = req.params;
+    Comment.find({ recipe_id }, { avatar, input })
       .then((data) => res.json(data))
       .catch((err) => next(err));
   }); 
-*/
+
+ */
+
+// "/comments/create"
+router.post("/create", (req, res, next) => {
+    const { recipe_id } = req.params;
+    Comment.create({ recipe_id }, { avatar, input })
+      .then((data) => res.json(data))
+      .catch((err) => next(err));
+  }); 
+
 
 module.exports = router;

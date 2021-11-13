@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const authRoutes = require("./auth.routes");
-const secureRoutes = require("./secure.routes"); // added for profile page
+const profileRoutes = require("./profile.routes"); // added for profile page
 const { isLoggedIn } = require("../middlewares/authorization"); // middlewares
 const recipeRoutes = require("./recipe.routes"); // added for recipes
 const commentRoutes = require("./comment.routes");
@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
 
 // You put the next routes here 👇
 router.use("/auth", authRoutes);
-router.use("/", isLoggedIn, secureRoutes); // added for profile page
+router.use("/profile", isLoggedIn, profileRoutes); // added for profile page
 router.use("/recipes", isLoggedIn, recipeRoutes); 
 router.use("/comments", isLoggedIn, commentRoutes)
 
