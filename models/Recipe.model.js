@@ -16,6 +16,7 @@ const recipeSchema = new Schema(
       {
         name: String,
         quantity: String,
+        measure: String,
       },
     ],
     preparation: [String],

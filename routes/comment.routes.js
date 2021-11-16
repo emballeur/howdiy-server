@@ -6,18 +6,18 @@ const User = require("../models/User.model");
 /* 
 "/comments/all"
 router.get("/all", (req, res, next) => {
-    const { recipe_id } = req.params;
-    Comment.find({ recipe_id }, { input, createdBy })
+    const { id } =  req.params.id
+    Comment.findById({ commentingOn: id }) // find those which are commentingOn the recipe id in the current params/ URL 
       .then((data) => res.json(data))
       .catch((err) => next(err));
-  }); 
+  });
  */
 
 // "/comments/create"
-router.post("/create", (req, res, next) => {
-    const { recipe_id } = req.params.id;
+router.post("/create/:id", (req, res, next) => {
+    const { id } = req.params;
     const { input } = req.body; // also add the avatar
-    Comment.create({ recipe_id }, { commentingOn: recipe_id, input, createdBy: req.session.user._id,})
+    Comment.create({ commentingOn: id, input, createdBy: req.session.user._id}, { new: true })
       .then((data) => res.json(data))
       .catch((err) => next(err));
   }); 
