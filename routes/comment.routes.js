@@ -7,17 +7,17 @@ const User = require("../models/User.model");
 "/comments/all"
 router.get("/all", (req, res, next) => {
     const { recipe_id } = req.params;
-    Comment.find({ recipe_id }, { avatar, input })
+    Comment.find({ recipe_id }, { input, createdBy })
       .then((data) => res.json(data))
       .catch((err) => next(err));
   }); 
-
  */
 
 // "/comments/create"
 router.post("/create", (req, res, next) => {
-    const { recipe_id } = req.params;
-    Comment.create({ recipe_id }, { avatar, input })
+    const { recipe_id } = req.params.id;
+    const { input } = req.body; // also add the avatar
+    Comment.create({ recipe_id }, { commentingOn: recipe_id, input, createdBy: req.session.user._id,})
       .then((data) => res.json(data))
       .catch((err) => next(err));
   }); 
