@@ -46,8 +46,35 @@ router.post("/create", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-//display a specific howdiy with all info
+// VIEW / display a specific howdiy with all info
 router.get("/howdiy/:id", (req, res, next) => {
+  Recipe.findById(req.params.id)
+    .then((data) => res.json(data))
+    .catch((err) => next(err));
+}); // for the view of Howdiy.jsx
+
+// inside VIEW - recipes/:id/addIngredient
+router.post("/:id/addIngredient", (req, res, next) => {
+  const {name,
+    quantity,
+    measure
+  } = req.body;
+  console.log(req.body)
+  Recipe.findByIdAndUpdate(req.params.id, { $push: {ingredients: { name,
+    quantity,
+    measure }}}, { new: true })
+    .then((data) => {
+      console.log("hey all good with your CRUD")
+      // push into the array above with the $push ingredients: {}
+      res.status(200).json(data)
+    })
+    .catch((err) => next(err));
+});
+
+
+
+//get the info for the edit page
+router.get("/edit/:id", (req, res, next) => {
   Recipe.findById(req.params.id)
     .then((data) => res.json(data))
     .catch((err) => next(err));
