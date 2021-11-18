@@ -53,8 +53,8 @@ router.get("/howdiy/:id", (req, res, next) => {
     .catch((err) => next(err));
 }); // for the view of Howdiy.jsx
 
-//edit
-router.patch("/:id", (req, res, next) => {
+//edit  /recipes/edit/:id
+router.patch("/edit/:id", (req, res, next) => {
   const {
     category,
     descriptiveName,
@@ -95,5 +95,6 @@ router.delete("/delete/:id", (req, res, next) => {
     )
     .catch((err) => next(err));
 });
+
 
 module.exports = router;
