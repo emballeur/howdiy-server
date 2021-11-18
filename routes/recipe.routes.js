@@ -83,8 +83,14 @@ router.patch("/edit/:id", (req, res, next) => {
     },
     { new: true }
   )
-    .then((data) => res.json(data))
-    .catch((err) => next(err));
+    .then((data) => {
+      console.log(data, "this is the edit data")
+      res.json(data)
+    })
+    .catch((err) => {
+      console.log(data, "this is the edit catch error")
+      next(err)
+    });
 });
 
 //delete
