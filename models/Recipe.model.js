@@ -19,7 +19,10 @@ const recipeSchema = new Schema(
         measure: String,
       },
     ],
-    preparation: [String],
+    preparation: [{
+      step: Number,
+      description: String,
+    }],
     productImg: String,
     gallery: [String],
     timeOfPreparation: Number, // specify mins in form

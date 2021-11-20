@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Recipe = require("../models/Recipe.model");
 const User = require("../models/User.model"); // use this PENDING -- find the User (createdBy) of the Recipe
-// const upload = require('../config/cloudinary.config');
+const fileUploader = require('../middlewares/cloudinary.config');
 
 // "/recipes/categories"
 router.get("/categorylist/:category", (req, res, next) => {
@@ -11,20 +11,16 @@ router.get("/categorylist/:category", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-/* upload.single('imageUrl'), // as a middleware
-const productImg = req.file.path;
-const gallery = req.file.path; */
-
 //create  // "/recipes/create"
-router.post("/create", (req, res, next) => {
+router.post("/create", fileUploader.single('productImg'), (req, res, next) => {
+  const productImg = req.file.path;
+  // const gallery = req.file.path;
   const {
     category,
     descriptiveName,
     ingredients,
     preparation,
-    productImg,
     isGiftable,
-    gallery,
     timeOfPreparation,
     costRating,
     difficultyRating,
@@ -36,7 +32,6 @@ router.post("/create", (req, res, next) => {
     preparation,
     productImg,
     isGiftable,
-    gallery,
     timeOfPreparation,
     costRating,
     difficultyRating,
