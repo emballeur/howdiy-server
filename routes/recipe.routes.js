@@ -13,7 +13,7 @@ router.get("/categorylist/:category", (req, res, next) => {
 
 //create  // "/recipes/create"
 router.post("/create", fileUploader.single('productImg'), (req, res, next) => {
-  const productImg = req.file.path;
+  // const productImg
   // const gallery = req.file.path;
   const {
     category,
@@ -30,7 +30,7 @@ router.post("/create", fileUploader.single('productImg'), (req, res, next) => {
     descriptiveName,
     ingredients,
     preparation,
-    productImg,
+    productImg: req.file.path,
     isGiftable,
     timeOfPreparation,
     costRating,
