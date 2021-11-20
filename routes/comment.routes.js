@@ -3,15 +3,15 @@ const Comment = require("../models/Comment.model");
 const Recipe = require("../models/Recipe.model");
 const User = require("../models/User.model");
 
-/* 
-"/comments/all"
-router.get("/all", (req, res, next) => {
-    const { id } =  req.params.id
-    Comment.findById({ commentingOn: id }) // find those which are commentingOn the recipe id in the current params/ URL 
+
+// "/comments/all"
+router.get("/all/:id", (req, res, next) => {
+    const { id } =  req.params;
+    Comment.find({ commentingOn: id }) // find those which are commentingOn the recipe id in the current params/ URL 
       .then((data) => res.json(data))
       .catch((err) => next(err));
   });
- */
+
 
 // "/comments/create"
 router.post("/create/:id", (req, res, next) => {
