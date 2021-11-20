@@ -55,23 +55,20 @@ router.get("/howdiy/:id", (req, res, next) => {
 
 // inside VIEW - recipes/:id/addIngredient
 router.post("/:id/addIngredient", (req, res, next) => {
-  const {name,
-    quantity,
-    measure
-  } = req.body;
-  console.log(req.body)
-  Recipe.findByIdAndUpdate(req.params.id, { $push: {ingredients: { name,
-    quantity,
-    measure }}}, { new: true })
+  const { category, name, quantity, measure } = req.body;
+  console.log(req.body);
+  Recipe.findByIdAndUpdate(
+    req.params.id,
+    { $push: { ingredients: { name, quantity, measure } } },
+    { new: true }
+  )
     .then((data) => {
-      console.log("hey all good with your CRUD")
+      console.log("hey all good with your CRUD");
       // push into the array above with the $push ingredients: {}
-      res.status(200).json(data)
+      res.status(200).json(data);
     })
     .catch((err) => next(err));
 });
-
-
 
 //get the info for the edit page
 router.get("/edit/:id", (req, res, next) => {
@@ -111,12 +108,12 @@ router.patch("/edit/:id", (req, res, next) => {
     { new: true }
   )
     .then((data) => {
-      console.log(data, "this is the edit data")
-      res.json(data)
+      console.log(data, "this is the edit data");
+      res.json(data);
     })
     .catch((err) => {
-      console.log(data, "this is the edit catch error")
-      next(err)
+      console.log(data, "this is the edit catch error");
+      next(err);
     });
 });
 
@@ -128,6 +125,5 @@ router.delete("/delete/:id", (req, res, next) => {
     )
     .catch((err) => next(err));
 });
-
 
 module.exports = router;
