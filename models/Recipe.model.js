@@ -19,18 +19,23 @@ const recipeSchema = new Schema(
         measure: String,
       },
     ],
-    preparation: [{
-      step: Number,
-      description: String,
-    }],
-    productImg: String,
+    preparation: [
+      {
+        step: Number,
+        description: String,
+      },
+    ],
+    productImg: {
+      type: String,
+      default: "",
+    },
     gallery: [String],
     timeOfPreparation: Number, // specify mins in form
     costRating: Number, // TIP on how to calculate in form
     difficultyRating: Number, // TIP on how to calculate in form
     createdBy: {
-        type: Schema.Types.ObjectId,
-        ref: "User" //whatever you defined the model as "blabla" in the model in the User.model
+      type: Schema.Types.ObjectId,
+      ref: "User", //whatever you defined the model as "blabla" in the model in the User.model
     },
   },
   {

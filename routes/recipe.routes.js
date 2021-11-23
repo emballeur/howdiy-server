@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Recipe = require("../models/Recipe.model");
 const User = require("../models/User.model"); // use this PENDING -- find the User (createdBy) of the Recipe
-const fileUploader = require('../middlewares/cloudinary.config');
+const fileUploader = require("../middlewares/cloudinary.config");
 
 // "/recipes/categories"
 router.get("/categorylist/:category", (req, res, next) => {
@@ -12,9 +12,10 @@ router.get("/categorylist/:category", (req, res, next) => {
 });
 
 //create  // "/recipes/create"
-router.post("/create", fileUploader.single('productImg'), (req, res, next) => {
-  // const productImg
-  // const gallery = req.file.path;
+router.post("/create", fileUploader.single("imageUrl"), (req, res, next) => {
+  
+  const productImg = req.file ? req.file.path : undefined
+
   const {
     category,
     descriptiveName,
@@ -30,7 +31,7 @@ router.post("/create", fileUploader.single('productImg'), (req, res, next) => {
     descriptiveName,
     ingredients,
     preparation,
-    productImg: req.file.path,
+    productImg,
     isGiftable,
     timeOfPreparation,
     costRating,
@@ -39,11 +40,12 @@ router.post("/create", fileUploader.single('productImg'), (req, res, next) => {
   })
     .then((data) => res.json(data))
     .catch((err) => next(err));
-}); 
+});
 
 // VIEW / display a specific howdiy with all info
 router.get("/howdiy/:id", (req, res, next) => {
-  Recipe.findById(req.params.id).populate('createdBy')
+  Recipe.findById(req.params.id)
+    .populate("createdBy")
     .then((data) => res.json(data))
     .catch((err) => next(err));
 }); // for the view of Howdiy.jsx
