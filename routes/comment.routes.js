@@ -3,7 +3,6 @@ const Comment = require("../models/Comment.model");
 const Recipe = require("../models/Recipe.model");
 const User = require("../models/User.model");
 
-
 // "/comments/all"
 router.get("/all/:id", (req, res, next) => {
     const { id } =  req.params;
