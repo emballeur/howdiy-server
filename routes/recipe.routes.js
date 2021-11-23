@@ -39,11 +39,11 @@ router.post("/create", fileUploader.single('productImg'), (req, res, next) => {
   })
     .then((data) => res.json(data))
     .catch((err) => next(err));
-});
+}); 
 
 // VIEW / display a specific howdiy with all info
 router.get("/howdiy/:id", (req, res, next) => {
-  Recipe.findById(req.params.id)
+  Recipe.findById(req.params.id).populate('createdBy')
     .then((data) => res.json(data))
     .catch((err) => next(err));
 }); // for the view of Howdiy.jsx
@@ -62,6 +62,15 @@ router.post("/:id/addIngredient", (req, res, next) => {
       // push into the array above with the $push ingredients: {}
       res.status(200).json(data);
     })
+    .catch((err) => next(err));
+});
+
+// recipes/addIngredient/delete/:id
+router.delete("/addIngredient/delete/:id", (req, res, next) => {
+  Recipe.findByIdAndDelete(req.params.id)
+    .then((data) =>
+      res.json("Your changes are made...we got rid of..." + data._id)
+    )
     .catch((err) => next(err));
 });
 

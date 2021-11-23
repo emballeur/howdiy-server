@@ -10,7 +10,12 @@ const commentSchema = new Schema({
     type: Schema.Types.ObjectId, // id of the recipe 
     ref: "Recipe"
   },
-});
+},
+  {
+    // this second object adds extra properties: `createdAt` and `updatedAt`
+    timestamps: true,
+  }
+);
 
 const CommentModel = model("Comment", commentSchema);
 
