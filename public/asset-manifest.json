@@ -1,22 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/static/js/main.7b36ba2a.chunk.js",
-    "main.js.map": "/static/js/main.7b36ba2a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3bd24ca6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3bd24ca6.js.map",
-    "static/js/2.69cc9eba.chunk.js": "/static/js/2.69cc9eba.chunk.js",
-    "static/js/2.69cc9eba.chunk.js.map": "/static/js/2.69cc9eba.chunk.js.map",
-    "static/js/3.106c5538.chunk.js": "/static/js/3.106c5538.chunk.js",
-    "static/js/3.106c5538.chunk.js.map": "/static/js/3.106c5538.chunk.js.map",
+    "main.css": "/static/css/main.d9b97ed0.chunk.css",
+    "main.js": "/static/js/main.21874343.chunk.js",
+    "main.js.map": "/static/js/main.21874343.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0df4512e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0df4512e.js.map",
+    "static/css/2.383c0125.chunk.css": "/static/css/2.383c0125.chunk.css",
+    "static/js/2.0157a830.chunk.js": "/static/js/2.0157a830.chunk.js",
+    "static/js/2.0157a830.chunk.js.map": "/static/js/2.0157a830.chunk.js.map",
+    "static/js/3.abb989e7.chunk.js": "/static/js/3.abb989e7.chunk.js",
+    "static/js/3.abb989e7.chunk.js.map": "/static/js/3.abb989e7.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.69cc9eba.chunk.js.LICENSE.txt": "/static/js/2.69cc9eba.chunk.js.LICENSE.txt"
+    "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
+    "static/css/main.d9b97ed0.chunk.css.map": "/static/css/main.d9b97ed0.chunk.css.map",
+    "static/js/2.0157a830.chunk.js.LICENSE.txt": "/static/js/2.0157a830.chunk.js.LICENSE.txt",
+    "static/media/categoriesTitle.4a1f399b.png": "/static/media/categoriesTitle.4a1f399b.png",
+    "static/media/housecareGrey.2beb45b1.png": "/static/media/housecareGrey.2beb45b1.png",
+    "static/media/howdiyGreen.397b630a.png": "/static/media/howdiyGreen.397b630a.png",
+    "static/media/howdiyWhite.b46e4d89.png": "/static/media/howdiyWhite.b46e4d89.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.3bd24ca6.js",
-    "static/js/2.69cc9eba.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.7b36ba2a.chunk.js"
+    "static/js/runtime-main.0df4512e.js",
+    "static/css/2.383c0125.chunk.css",
+    "static/js/2.0157a830.chunk.js",
+    "static/css/main.d9b97ed0.chunk.css",
+    "static/js/main.21874343.chunk.js"
   ]
 }
