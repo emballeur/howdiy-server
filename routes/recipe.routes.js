@@ -6,7 +6,7 @@ const fileUploader = require("../middlewares/cloudinary.config");
 // "/recipes/categories"
 router.get("/categorylist/:category", (req, res, next) => {
   const { category } = req.params;
-  Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1 })
+  Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1, difficultyRating: 1, costRating: 1, createdBy: 1}).populate('createdBy')
     .then((data) => res.json(data))
     .catch((err) => next(err));
 });
