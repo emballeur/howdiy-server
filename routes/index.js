@@ -11,6 +11,10 @@ router.get("/", (req, res, next) => {
   res.json("All good in here");
 });
 
+router.get("/join", (req, res, next) => {
+  res.json("All good in here");
+});
+
 // You put the next routes here 👇
 router.use("/auth", authRoutes);
 router.use("/profile", isLoggedIn, profileRoutes); // added for profile page

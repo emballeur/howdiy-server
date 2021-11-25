@@ -25,9 +25,11 @@ router.post("/create", fileUploader.single("imageUrl"), (req, res, next) => {
     timeOfPreparation,
     costRating,
     difficultyRating,
+    funName,
   } = req.body;
   Recipe.create({
     category,
+    funName,
     descriptiveName,
     ingredients,
     preparation,
