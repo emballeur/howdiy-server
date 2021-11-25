@@ -6,20 +6,20 @@ const fileUploader = require("../middlewares/cloudinary.config");
 // "/recipes/categories"
 router.get("/categorylist/:category", (req, res, next) => {
   const { category } = req.params;
-  Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1, difficultyRating: 1, costRating: 1, createdBy: 1}).populate('createdBy')
+  Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1, difficultyRating: 1, timeOfPreparation: 1, costRating: 1, createdBy: 1}).populate('createdBy')
     .then((data) => res.json(data))
     .catch((err) => next(err));
 });
 
 //create  // "/recipes/create"
-router.post("/create", fileUploader.single("imageUrl"), (req, res, next) => {
-  
-  const productImg = req.file ? req.file.path : undefined
+router.post("/create", (req, res, next) => {
+
 
   const {
     category,
     descriptiveName,
     ingredients,
+    productImg,
     preparation,
     isGiftable,
     timeOfPreparation,
