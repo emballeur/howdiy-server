@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.e97c929a.chunk.css",
-    "main.js": "/static/js/main.3bd59a17.chunk.js",
-    "main.js.map": "/static/js/main.3bd59a17.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0df4512e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0df4512e.js.map",
+    "main.css": "/static/css/main.8d88d16d.chunk.css",
+    "main.js": "/static/js/main.029869a6.chunk.js",
+    "main.js.map": "/static/js/main.029869a6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.90c87965.js",
+    "runtime-main.js.map": "/static/js/runtime-main.90c87965.js.map",
     "static/css/2.383c0125.chunk.css": "/static/css/2.383c0125.chunk.css",
-    "static/js/2.0157a830.chunk.js": "/static/js/2.0157a830.chunk.js",
-    "static/js/2.0157a830.chunk.js.map": "/static/js/2.0157a830.chunk.js.map",
-    "static/js/3.abb989e7.chunk.js": "/static/js/3.abb989e7.chunk.js",
-    "static/js/3.abb989e7.chunk.js.map": "/static/js/3.abb989e7.chunk.js.map",
+    "static/js/2.d264dfef.chunk.js": "/static/js/2.d264dfef.chunk.js",
+    "static/js/2.d264dfef.chunk.js.map": "/static/js/2.d264dfef.chunk.js.map",
+    "static/js/3.bb861567.chunk.js": "/static/js/3.bb861567.chunk.js",
+    "static/js/3.bb861567.chunk.js.map": "/static/js/3.bb861567.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.e97c929a.chunk.css.map": "/static/css/main.e97c929a.chunk.css.map",
-    "static/js/2.0157a830.chunk.js.LICENSE.txt": "/static/js/2.0157a830.chunk.js.LICENSE.txt",
+    "static/css/main.8d88d16d.chunk.css.map": "/static/css/main.8d88d16d.chunk.css.map",
+    "static/js/2.d264dfef.chunk.js.LICENSE.txt": "/static/js/2.d264dfef.chunk.js.LICENSE.txt",
     "static/media/categoriesTitle.4a1f399b.png": "/static/media/categoriesTitle.4a1f399b.png",
     "static/media/cowboyHat.0b3ef97f.png": "/static/media/cowboyHat.0b3ef97f.png",
     "static/media/housecareGrey.2beb45b1.png": "/static/media/housecareGrey.2beb45b1.png",
@@ -21,10 +21,10 @@
     "static/media/howdiyWhite.b46e4d89.png": "/static/media/howdiyWhite.b46e4d89.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0df4512e.js",
+    "static/js/runtime-main.90c87965.js",
     "static/css/2.383c0125.chunk.css",
-    "static/js/2.0157a830.chunk.js",
-    "static/css/main.e97c929a.chunk.css",
-    "static/js/main.3bd59a17.chunk.js"
+    "static/js/2.d264dfef.chunk.js",
+    "static/css/main.8d88d16d.chunk.css",
+    "static/js/main.029869a6.chunk.js"
   ]
 }
