@@ -6,20 +6,19 @@ const fileUploader = require("../middlewares/cloudinary.config");
 // "/recipes/categories"
 router.get("/categorylist/:category", (req, res, next) => {
   const { category } = req.params;
-  Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1, difficultyRating: 1, timeOfPreparation: 1, costRating: 1, createdBy: 1}).populate('createdBy')
+  Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1, difficultyRating: 1, timeOfPreparation: 1, costRating: 1, createdBy: 1, ingredients: 1}).populate('createdBy')
     .then((data) => res.json(data))
     .catch((err) => next(err));
 });
 
 //create  // "/recipes/create"
 router.post("/create", (req, res, next) => {
-
-
   const {
     category,
     descriptiveName,
     ingredients,
     productImg,
+    gallery,
     preparation,
     isGiftable,
     timeOfPreparation,
@@ -35,6 +34,7 @@ router.post("/create", (req, res, next) => {
     preparation,
     productImg,
     isGiftable,
+    gallery,
     timeOfPreparation,
     costRating,
     difficultyRating,
@@ -70,7 +70,16 @@ router.post("/:id/addIngredient", (req, res, next) => {
 });
 
 // recipes/addIngredient/delete/:id
-router.delete("/addIngredient/delete/:id", (req, res, next) => {
+router.delete("/ingredients/delete/:id", (req, res, next) => {
+  Recipe.findByIdAndDelete(req.params.id)
+    .then((data) =>
+      res.json("Your changes are made...we got rid of..." + data._id)
+    )
+    .catch((err) => next(err));
+});
+
+// recipes/addIngredient/delete/:id
+router.delete("/preparation/delete/:id", (req, res, next) => {
   Recipe.findByIdAndDelete(req.params.id)
     .then((data) =>
       res.json("Your changes are made...we got rid of..." + data._id)

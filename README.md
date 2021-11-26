@@ -18,3 +18,12 @@ Aggressive chemical cleaning agents, hidden baddies in cosmetics and toys pumped
 - Gamified elements - spinning wheel -- tumbleweed -- tumbleweave 
 - Editor’s Pick / Highlighted 
 
+
+
+## icon ideas
+- saloon doors - housecare
+- cowboy face - facecare
+- the rope - play 
+- the horse being brushed / cowboyboots with the buckle - bodycare
+- leg of ham/ bulging belly with the belt - food
+- flask/bottle / pint glasses cheersing - drink
