@@ -6,7 +6,20 @@ const fileUploader = require("../middlewares/cloudinary.config");
 // "/recipes/categories"
 router.get("/categorylist/:category", (req, res, next) => {
   const { category } = req.params;
-  Recipe.find({ category }, { productImg: 1, funName: 1, descriptiveName: 1, difficultyRating: 1, timeOfPreparation: 1, costRating: 1, createdBy: 1, ingredients: 1}).populate('createdBy')
+  Recipe.find(
+    { category },
+    {
+      productImg: 1,
+      funName: 1,
+      descriptiveName: 1,
+      difficultyRating: 1,
+      timeOfPreparation: 1,
+      costRating: 1,
+      createdBy: 1,
+      ingredients: 1,
+    }
+  )
+    .populate("createdBy")
     .then((data) => res.json(data))
     .catch((err) => next(err));
 });
@@ -55,14 +68,13 @@ router.get("/howdiy/:id", (req, res, next) => {
 // inside VIEW - recipes/:id/addIngredient
 router.post("/:id/addIngredient", (req, res, next) => {
   const { category, name, quantity, measure } = req.body;
-  console.log(req.body);
+
   Recipe.findByIdAndUpdate(
     req.params.id,
     { $push: { ingredients: { name, quantity, measure } } },
     { new: true }
   )
     .then((data) => {
-      console.log("hey all good with your CRUD");
       // push into the array above with the $push ingredients: {}
       res.status(200).json(data);
     })
@@ -125,11 +137,9 @@ router.patch("/edit/:id", (req, res, next) => {
     { new: true }
   )
     .then((data) => {
-      console.log(data, "this is the edit data");
       res.json(data);
     })
     .catch((err) => {
-      console.log(data, "this is the edit catch error");
       next(err);
     });
 });

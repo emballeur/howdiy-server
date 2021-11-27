@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.be606841.chunk.css",
+    "main.css": "/static/css/main.aa9bd7d9.chunk.css",
     "main.js": "/static/js/main.87144877.chunk.js",
     "main.js.map": "/static/js/main.87144877.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.90c87965.js",
@@ -12,7 +12,7 @@
     "static/js/3.bb861567.chunk.js.map": "/static/js/3.bb861567.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.be606841.chunk.css.map": "/static/css/main.be606841.chunk.css.map",
+    "static/css/main.aa9bd7d9.chunk.css.map": "/static/css/main.aa9bd7d9.chunk.css.map",
     "static/js/2.43c874e9.chunk.js.LICENSE.txt": "/static/js/2.43c874e9.chunk.js.LICENSE.txt",
     "static/media/Body-icon.5de7b01a.png": "/static/media/Body-icon.5de7b01a.png",
     "static/media/Bodycare.1d817e7e.png": "/static/media/Bodycare.1d817e7e.png",
@@ -40,7 +40,7 @@
     "static/js/runtime-main.90c87965.js",
     "static/css/2.383c0125.chunk.css",
     "static/js/2.43c874e9.chunk.js",
-    "static/css/main.be606841.chunk.css",
+    "static/css/main.aa9bd7d9.chunk.css",
     "static/js/main.87144877.chunk.js"
   ]
 }

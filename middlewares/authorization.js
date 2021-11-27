@@ -4,7 +4,6 @@
 module.exports = {
     isLoggedIn: (req, res, next) => {
       // if this is a user with an active session, continue:
-      console.log(req.session)
       if (req.session.user) {
         next()
       } else {
