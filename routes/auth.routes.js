@@ -94,7 +94,6 @@ router.post('/login', (req, res, next) => {
         if (!isSamePassword) {
           return res.json({ errorMessage: 'Wrong password, mate.' });
         }
-        console.log(req.session)
         req.session.user = user;
         return res.json(user);
       });
@@ -116,7 +115,6 @@ router.post('/logout', (req, res, next) => {
 });
 
 router.get('/loggedin', (req, res, next) => {
-    console.log(req.session)
   if (req.session.user) {
     return res.json({ user: req.session.user });
   }
